@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>simple example | high check tree</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.highCheckTree.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/highCheckTree.css"/>
+        <style type="text/css">
+            #main-container{
+                width: 600px;
+                margin:  20px auto;
+            }
+            
+            #tree-container label.hover{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="main-container">
+        <div id="tree-container"></div>
+       </div>
+        <script>
+            var mockData = [];
+            mockData.push({
+                item:{
+                    id: 'id1',
+                    label: 'label1',
+                    checked: false
+                },
+                children: [{
+                   item:{
+                        id: 'id11',
+                        label: 'label11',
+                        checked: false
+                    } 
+                },{
+                   item:{
+                        id: 'id12',
+                        label: 'label12',
+                        checked: false
+                    } 
+                },{
+                   item:{
+                        id: 'id13',
+                        label: 'label13',
+                        checked: false
+                    } 
+                }]
+            });
+
+            mockData.push({
+                item:{
+                    id: 'id2',
+                    label: 'label2',
+                    checked: false
+                },
+                children: [{
+                   item:{
+                        id: 'id21',
+                        label: 'label21',
+                        checked: false
+                    } 
+                },{
+                   item:{
+                        id: 'id22',
+                        label: 'label22',
+                        checked: true
+                    } 
+                },{
+                   item:{
+                        id: 'id23',
+                        label: 'label23',
+                        checked: false
+                    } 
+                }]
+            });
+
+            mockData.push({
+                item:{
+                    id: 'id3',
+                    label: 'label3',
+                    checked: false
+                },
+                children: [{
+                   item:{
+                        id: 'id31',
+                        label: 'label31',
+                        checked: true
+                    } 
+                },{
+                   item:{
+                        id: 'id32',
+                        label: 'label32',
+                        checked: false
+                    },
+                    children: [{
+                        item:{
+                            id: 'id321',
+                            label: 'label321',
+                            checked: false
+                        }
+                    },{
+                        item:{
+                            id: 'id322',
+                            label: 'label322',
+                            checked: false
+                        }
+                    }]
+                }]
+            });
+
+            $('#tree-container').highCheckTree({
+                data: mockData
+            });
+        </script> 
+    </body>
+</html>
